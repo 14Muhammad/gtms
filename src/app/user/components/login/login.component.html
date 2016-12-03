@@ -1,0 +1,41 @@
+<div class="form-modal modal">
+  <div class="modal-window">
+    <h2>
+      <span class="webfont">Login</span>
+    </h2>
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="onLogin()"  id="login-form">
+      <table>
+        <tbody><tr>
+          <td class="form-label-cell">
+            <label for="login-username-input">username</label>
+          </td>
+          <td class="form-input-cell">
+            <input autocomplete="off" autofocus="autofocus" id="login-username-input"
+                   formControlName="username" name="username" required="required" type="text">
+          </td>
+        </tr>
+        <tr>
+          <td class="form-label-cell">
+            <label for="login-password-input">password</label>
+          </td>
+          <td class="form-input-cell">
+            <input autocomplete="off" id="login-password-input"
+                   formControlName="password" name="password" required="required" type="password">
+          </td>
+        </tr>
+        </tbody></table>
+      <div class="form-footer">
+        <p>
+          Forgot your password?
+          <a routerLink="/forget-password" routerLinkActive="active">Reset</a><br>
+          Don't have account?
+          <a routerLink="/signup" routerLinkActive="active">Sign up</a>
+        </p>
+        <div class="button-group">
+          <button class="primary-button button" id="login-submit" type="submit">Let's deux this</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

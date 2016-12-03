@@ -1,0 +1,109 @@
+<div class="is-trial" id="app">
+  <todo-header></todo-header>
+  <section class="todo-section" id="calendar">
+    <nav class="column-list-nav column-list-left-nav">
+      <a class="nav-icon nav-button nav-left-button ss-left" (click)="moveLeft(1)"></a>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="nav-icon nav-jump-left-button nav-jump-button ss-jumpleft" (click)="moveLeft(5)"></a>
+        </li>
+        <li>
+          <a class="nav-icon nav-home-button today-button ss-home" (click)="resetDays()"></a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="column-list-nav column-list-right-nav">
+      <a class="nav-icon nav-button nav-right-button ss-right" (click)="moveRight(1)"></a>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="nav-icon nav-jump-right-button nav-jump-button ss-jumpright"  (click)="moveRight(5)"></a>
+        </li>
+        <li>
+          <a class="nav-icon datepicker-button ss-calendar"></a>
+        </li>
+      </ul>
+      <div class="datepicker"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+        <a class="ui-datepicker-prev ui-corner-all datepicker-nav-left-button">
+          <span class="ui-icon ui-icon-circle-triangle-w ss-left"></span>
+        </a>
+        <a class="ui-datepicker-next ui-corner-all datepicker-nav-right-button">
+          <span class="ui-icon ui-icon-circle-triangle-e ss-right"></span>
+        </a>
+        <div class="datepicker-title ui-datepicker-title">October 2016</div>
+      </div>
+        <table class="ui-datepicker-calendar">
+          <thead>
+          <tr>
+            <th class="ui-datepicker-week-end">
+              <span title="Sunday">Su</span>
+            </th>
+            <th>
+              <span title="Monday">Mo</span>
+            </th>
+            <th>
+              <span title="Tuesday">Tu</span>
+            </th>
+            <th>
+              <span title="Wednesday">We</span>
+            </th>
+            <th>
+              <span title="Thursday">Th</span>
+            </th>
+            <th>
+              <span title="Friday">Fr</span>
+            </th>
+            <th class="ui-datepicker-week-end">
+              <span title="Saturday">Sa</span>
+            </th>
+          </tr>
+          </thead>
+          <tbody class="datepicker-dates"><tr><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td><a class="ui-state-default" data-date="2016-10-01">1</a></td></tr><tr><td><a class="ui-state-default" data-date="2016-10-02">2</a></td><td><a class="ui-state-default" data-date="2016-10-03">3</a></td><td><a class="ui-state-default" data-date="2016-10-04">4</a></td><td><a class="ui-state-default" data-date="2016-10-05">5</a></td><td><a class="ui-state-default" data-date="2016-10-06">6</a></td><td><a class="ui-state-default" data-date="2016-10-07">7</a></td><td><a class="ui-state-default" data-date="2016-10-08">8</a></td></tr><tr><td><a class="ui-state-default" data-date="2016-10-09">9</a></td><td><a class="ui-state-default" data-date="2016-10-10">10</a></td><td><a class="ui-state-default" data-date="2016-10-11">11</a></td><td><a class="ui-state-default" data-date="2016-10-12">12</a></td><td><a class="ui-state-default" data-date="2016-10-13">13</a></td><td><a class="ui-state-default" data-date="2016-10-14">14</a></td><td><a class="ui-state-default" data-date="2016-10-15">15</a></td></tr><tr><td><a class="ui-state-default" data-date="2016-10-16">16</a></td><td class="ui-datepicker-today"><a class="ui-state-default" data-date="2016-10-17">17</a></td><td><a class="ui-state-default" data-date="2016-10-18">18</a></td><td><a class="ui-state-default" data-date="2016-10-19">19</a></td><td><a class="ui-state-default" data-date="2016-10-20">20</a></td><td><a class="ui-state-default" data-date="2016-10-21">21</a></td><td><a class="ui-state-default" data-date="2016-10-22">22</a></td></tr><tr><td><a class="ui-state-default" data-date="2016-10-23">23</a></td><td><a class="ui-state-default" data-date="2016-10-24">24</a></td><td><a class="ui-state-default" data-date="2016-10-25">25</a></td><td><a class="ui-state-default" data-date="2016-10-26">26</a></td><td><a class="ui-state-default" data-date="2016-10-27">27</a></td><td><a class="ui-state-default" data-date="2016-10-28">28</a></td><td><a class="ui-state-default" data-date="2016-10-29">29</a></td></tr><tr><td><a class="ui-state-default" data-date="2016-10-30">30</a></td><td><a class="ui-state-default" data-date="2016-10-31">31</a></td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody>
+        </table>
+      </div>
+    </nav>
+    <div class="meanwhile-message">Meanwhile...</div>
+    <div class="column-list-scroll-container animated slideInRight">
+      <div class="column-list" style="left: -1px;">
+        <section *ngFor="let list of todoList" class="column calendar-column {{ getTimePhase(list.date) }}"
+                 data-id="null"
+                 id="{{list.id}}" style="min-height: 455px;">
+          <h3 class="day webfont"> {{ list.date.format('dddd')}}</h3>
+          <h4 class="date">{{list.date.format('MMMM DD, YYYY')}}</h4>
+          <div class="todo-list ui-sortable" style="min-height: 375px;">
+            <ol class="recurring-todo-item-list"></ol>
+            <ol class="todo-item-list" (drop)="drop($event)" (dragover)="allowDrop($event)">
+              <li *ngFor="let todo of list.todos"
+                  draggable="true" (dragstart)="drag($event)" id="{{todo._id}}"
+                   [todoEffects]="'#dbdbdb'" [ngClass]="{'todo-item': true, 'is-done': todo.isDone == 'false'?false:true}">
+                <div class="todo-text-wrapper">
+                  <div class="todo-text">
+                    <p [todoTextEffects]="todo" class="todo-text-html">{{todo.text}}</p>
+                  </div>
+                </div>
+                <div class="todo-button-list">
+                  <a class="todo-button todo-recurring-button ss-repeat" tabindex="-1"></a>
+                  <a class="todo-button todo-edit-button ss-write is-hidden" tabindex="-1"></a>
+                  <a class="todo-button todo-play-button ss-play is-hidden"
+                     [todoPlayButton]="todo.text" tabindex="-1"></a>
+                  <a class="todo-button todo-destroy-button ss-delete"
+                     [todoDeleteButton]="todo" (click)="deleteTodo(todo,list,$event)" tabindex="-1"></a>
+                </div>
+              </li>
+            </ol>
+            <div [newTodoInputEffects]="'grey'">
+              <input #newTodoInput (blur)="addTodo(newTodoInput.value,list);newTodoInput.value='';"
+                  [newTodoInputField]="newTodoInput.value" class="new-todo-input" type="text">
+              <div class="new-todo-input-button-list">
+                <a [newTodoRecordButton]="list"
+                   class="todo-button todo-record-button ss-record is-hidden" tabindex="-1">
+                  <i class="fa fa-circle fa-lg text-danger blink is-hidden"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="todo-rules"></div>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,180 @@
+<div class="form-modal modal">
+  <div class="modal-window">
+    <h2>
+      <span class="webfont">Sign up</span>
+    </h2>
+    <form [formGroup]="signupForm" novalidate id="signup-form" (ngSubmit)="onSignup()">
+      <!--<input type="hidden" name="authenticity_token" value="2c03f2bce702602ba226d7635b1c8a4f">
+      <section id="plan-section">
+        <h3>Subscription</h3>
+        <div id="plans">
+          <ul class="plan-list">
+            <li>
+              <div class="plan-name">Skeptic</div>
+              <input id="plan-monthly-radio-button" name="plan" type="radio" value="monthly">
+              <button class="plan-button toggle-button button" id="plan-monthly-button" type="button">
+                <div class="toggle-button-checkbox ss-check"></div>
+                <div class="toggle-button-text">
+                  <div class="plan-price">
+                    <span class="plan-dollar-sign">$</span>3
+                  </div>
+                  <div class="toggle-button-subtext">a month</div>
+                </div>
+              </button>
+            </li>
+            <li>
+              <div class="plan-name">Believer</div>
+              <input id="plan-yearly-radio-button" name="plan" type="radio" value="yearly">
+              <button class="plan-button toggle-button button" id="plan-yearly-button" type="button">
+                <div class="toggle-button-checkbox ss-check"></div>
+                <div class="toggle-button-text">
+                  <div class="plan-price">
+                    <span class="plan-dollar-sign">$</span>24
+                  </div>
+                  <div class="toggle-button-subtext">a year</div>
+                </div>
+              </button>
+              <p class="footnote">only $2 a month!</p>
+            </li>
+          </ul>
+          <div class="plan-trial">
+            <p>
+              <em>or</em>
+            </p>
+            <input id="plan-trial-radio-button" name="plan" type="radio" value="trial">
+            <button class="plan-button link-button toggle-button button is-selected" id="plan-trial-button" type="button">
+              <div class="toggle-button-checkbox ss-check"></div>
+              <div class="toggle-button-text">try it free for 30 days</div>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="is-hidden" id="payment-section">
+        <h3>Credit Card</h3>
+        <div class="callout payment-error error"></div>
+        <table class="payment-table">
+          <tbody><tr id="payment-card-number-row">
+            <td class="form-label-cell">
+              <label for="payment-card-number-input">card number</label>
+            </td>
+            <td class="form-input-cell">
+              <input autocomplete="off" id="payment-card-number-input" placeholder="1234-5678-1234-5678" type="text">
+            </td>
+          </tr>
+          <tr id="payment-cvc-row">
+            <td class="form-label-cell">
+              <label for="payment-cvc-input">cvc</label>
+            </td>
+            <td class="form-input-cell">
+              <input autocomplete="off" class="input-autosize" id="payment-cvc-input" placeholder="123" size="4" type="text">
+            </td>
+          </tr>
+          <tr id="payment-expiration-row">
+            <td class="form-label-cell">
+              <label for="payment-expiration-month-input">expiration</label>
+            </td>
+            <td class="form-input-cell">
+              <input class="input-autosize" id="payment-expiration-month-input" placeholder="mm" size="2" type="text">
+              <div class="payment-expiration-divider">/</div>
+              <input class="input-autosize" id="payment-expiration-year-input" placeholder="yyyy" size="4" type="text">
+            </td>
+          </tr>
+          </tbody></table>
+        <p class="footnote">
+          <span class="ss-lock"></span>
+          powered by
+          <a class="stripe-link" href="http://stripe.com/" target="_blank">Stripe</a>
+        </p>
+      </section>-->
+      <section id="account-section">
+        <!--<h3>Account</h3>-->
+         <!--<div class="callout flash-notice notice">
+
+         </div>-->
+          <div [hidden]="signupForm.controls['username'].valid ||
+                                             signupForm.controls['username'].pristine" class="notice">
+            <p *ngIf="signupForm.controls['username'].hasError('required')">
+              * Username is required.
+            </p>
+            <p *ngIf="signupForm.controls['username'].hasError('minlength')">
+              * Too short, min 3 characters
+            </p>
+            <p *ngIf="signupForm.controls['username'].hasError('maxlength')">
+              * Too long, max 15 characters
+            </p>
+            <p *ngIf="signupForm.controls['username'].hasError('pattern')">
+              * Please enter a valid username.
+            </p>
+            <p *ngIf="signupForm.controls['username'].hasError('isUsernameExists')">
+              * Username is already taken.
+            </p>
+          </div>
+          <div [hidden]="signupForm.controls['email'].valid ||
+                                             signupForm.controls['email'].pristine" class="notice">
+            <p *ngIf="signupForm.controls['email'].hasError('required')">
+              * Email is required.
+            </p>
+            <p *ngIf="signupForm.controls['email'].hasError('pattern')">
+              * Please enter a valid email address.
+            </p>
+            <p *ngIf="signupForm.controls['email'].hasError('isEmailExists')">
+              * Email is already taken.
+            </p>
+          </div>
+          <div [hidden]="signupForm.controls['password'].valid ||
+                                             signupForm.controls['password'].pristine" class="notice">
+            <p *ngIf="signupForm.controls['password'].hasError('required')">
+              * Password is required.
+            </p>
+            <p *ngIf="signupForm.controls['password'].hasError('minlength')">
+              * Please enter at least 6 character password.
+            </p>
+          </div>
+
+
+        <input id="signup-timezone-offset-input" name="timezone_offset" type="hidden" value="">
+        <table class="account-table">
+          <tbody><tr>
+            <td class="form-label-cell">
+              <label for="signup-username-input">username</label>
+            </td>
+            <td class="form-input-cell">
+              <input autocomplete="off" autofocus="autofocus" id="signup-username-input"
+                     formControlName="username" name="username" type="text">
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label-cell">
+              <label for="signup-email-input">email</label>
+            </td>
+            <td class="form-input-cell email-input-cell">
+              <input autocomplete="off" id="signup-email-input"
+                     formControlName="email" name="email" type="email">
+              <div class="email-suggestion is-hidden">
+                <p>Did you mean <a class="suggested-email"></a>?</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label-cell">
+              <label for="signup-password-input">password</label>
+            </td>
+            <td class="form-input-cell">
+              <input autocomplete="off" id="signup-password-input"
+                     formControlName="password" name="password" type="password">
+            </td>
+          </tr>
+          </tbody></table>
+      </section>
+      <div class="form-footer">
+        <p>
+          Already have an account?
+          <a routerLink="/login" routerLinkActive="active">Log in.</a>
+        </p>
+        <div class="button-group">
+          <button class="submit-button primary-button button" type="submit">Let's deux this</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

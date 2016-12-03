@@ -1,0 +1,25 @@
+<div class="header-container">
+  <div id="notices">
+    <ul class="notice-list callout-list"></ul>
+  </div>
+  <header class="header-bar custom-bgcolor">
+    <h1>
+      <a class="logo webfont" tabindex="-1">GTMS</a>
+    </h1>
+    <nav class="primary-nav">
+      <ul class="header-tab-group">
+        <li class="header-tab dropdown-tab">
+          <a>
+            <span class="header-username">{{loggedUsername}}</span>
+            <span class="header-dropdown-tab-icon ss-dropdown"></span>
+          </a>
+          <ul class="dropdown-menu header-dropdown-menu">
+            <li>
+              <a class="logout-button" (click)="logout()" tabindex="-1">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
